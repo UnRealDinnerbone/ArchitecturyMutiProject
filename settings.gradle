@@ -10,7 +10,7 @@ pluginManagement {
 
 rootProject.name = "Architectury-MultiProject"
 
-def addProject(String name) {
+def addArchitecturyProject(String name) {
     include(name)
     project(":" + name).projectDir = file("Projects/" + name)
 
