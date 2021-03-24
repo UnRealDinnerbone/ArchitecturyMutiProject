@@ -21,7 +21,7 @@
 	> modImplementation (rootProject.project("FTB-Teams").project("fabric")) { transitive = false }
     > implementation (rootProject.project("FTB-Teams").project("common")) { transitive = false }
  - [ ] Forge
-   >  modImplementation (rootProject.project("FTB-Teams").project("common")) { transitive = false }
+   >  modImplementation (rootProject.project("FTB-Teams").project("forge")) { transitive = false }
    > implementation (rootProject.project("FTB-Teams").project("common")) { transitive = false }
    > developmentForge(rootProject.project("FTB-Teams").project("common")) { transitive = false }
 
