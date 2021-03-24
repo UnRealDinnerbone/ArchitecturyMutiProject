@@ -1,14 +1,17 @@
-pluginManagement {
-    repositories {
-        maven { url "https://maven.fabricmc.net/" }
-        maven { url "https://maven.shedaniel.me/" }
-        maven { url "https://files.minecraftforge.net/maven/" }
-        gradlePluginPortal()
-    }
+rootProject.name = "Architectury-MultiProject"
+
+def addProject(String name) {
+    include(name)
+    project(":" + name).projectDir = file("Projects/" + name)
+
+    include(":" + name + ":common")
+    include(":" + name + ":fabric")
+    include(":" + name + ":forge")
+
+    project(":" + name + ":common").projectDir = file("Projects/" + name + "/common")
+    project(":" + name + ":fabric").projectDir = file("Projects/" + name + "/fabric")
+    project(":" + name + ":forge").projectDir = file("Projects/" + name + "/forge")
 }
 
-include("common")
-include("fabric")
-include("forge")
-
-rootProject.name = "architectury-example-mod"
+//Add Your Projects Here
+//addProject("Project-Name")
